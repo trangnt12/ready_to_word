@@ -1,0 +1,1763 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ready-to-Work | BA Capstone Visual Portfolio</title>
+
+  <!-- Google Fonts: Be Vietnam Pro + Nunito chuẩn tiếng Việt 100% -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Nunito:wght@700;800;900&display=swap"
+    rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            forest: {
+              50: '#F2F9F5',
+              100: '#E2F2E9',
+              200: '#C5E6D4',
+              400: '#52B788',
+              500: '#40916C',
+              600: '#2D6A4F',
+              700: '#1B4332',
+              800: '#132F23'
+            },
+            mint: {
+              50: '#F4FBF7',
+              100: '#D8F3DC',
+              200: '#B7E4C7',
+              500: '#40916C',
+              600: '#2D6A4F'
+            },
+            teal: {
+              50: '#F0F9F9',
+              100: '#D6F0F0',
+              200: '#B5E2E3',
+              500: '#38A3A5',
+              600: '#277A7C'
+            },
+            amber: {
+              50: '#FAF7F2',
+              100: '#F2ECE1',
+              200: '#E5DAC7',
+              500: '#A39171',
+              600: '#7D6D51'
+            },
+            moss: {
+              50: '#F6F7F4',
+              100: '#E9ECE4',
+              200: '#D5DACB',
+              500: '#6B705C',
+              600: '#525646'
+            }
+          },
+          fontFamily: {
+            sans: ['"Be Vietnam Pro"', 'sans-serif'],
+            heading: ['"Nunito"', '"Be Vietnam Pro"', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Complete Custom & Botanical Glass CSS -->
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: #F6FAF7;
+      color: #1B4332;
+      line-height: 1.85;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    p,
+    li,
+    td,
+    th,
+    span,
+    blockquote {
+      line-height: 1.85;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    .font-heading {
+      font-family: 'Nunito', 'Be Vietnam Pro', sans-serif;
+      line-height: 1.35;
+      color: #1B4332;
+    }
+
+    /* Layer 1 & 2: Light Architectural Dot-Grid + Botanical Mesh Background */
+    .botanical-bg {
+      background-color: #F6FAF7;
+      background-image:
+        radial-gradient(at 10% 8%, rgba(216, 243, 220, 0.7) 0px, transparent 45%),
+        radial-gradient(at 88% 22%, rgba(214, 240, 240, 0.65) 0px, transparent 48%),
+        radial-gradient(at 15% 65%, rgba(233, 245, 236, 0.75) 0px, transparent 50%),
+        radial-gradient(at 85% 85%, rgba(216, 243, 220, 0.6) 0px, transparent 45%),
+        radial-gradient(rgba(45, 106, 79, 0.13) 1px, transparent 1px);
+      background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%, 28px 28px;
+      background-attachment: fixed;
+    }
+
+    /* Wide Page Container (>80% viewport width, max 1980px) */
+    .page-container {
+      width: 86%;
+      max-width: 1980px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    @media (max-width: 768px) {
+      .page-container {
+        width: 94%;
+      }
+    }
+
+    /* Frosted Botanical Bento Card */
+    .bento-card {
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(16px);
+      border: 1.5px solid rgba(64, 145, 108, 0.15);
+      border-radius: 26px;
+      box-shadow: 0 12px 32px -10px rgba(27, 67, 50, 0.06);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .bento-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(64, 145, 108, 0.34);
+      box-shadow: 0 20px 40px -14px rgba(27, 67, 50, 0.11);
+    }
+
+    /* Natural Portrait Framing - Full Face & Shoulders Visible */
+    .portrait-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 18%;
+      transition: transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .bento-card:hover .portrait-img {
+      transform: scale(1.03);
+    }
+
+    /* Soothing Botanical Pill Badges */
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.38rem;
+      padding: 0.26rem 0.9rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      line-height: 1.5;
+      white-space: nowrap;
+    }
+
+    .pill-forest {
+      background: #E9F5EC;
+      color: #1B4332;
+      border: 1px solid #B7E4C7;
+    }
+
+    .pill-mint {
+      background: #D8F3DC;
+      color: #2D6A4F;
+      border: 1px solid #95D5B2;
+    }
+
+    .pill-teal {
+      background: #E3F4F4;
+      color: #277A7C;
+      border: 1px solid #B5E2E3;
+    }
+
+    .pill-amber {
+      background: #F5EFE6;
+      color: #7D6D51;
+      border: 1px solid #E2D5C1;
+    }
+
+    .pill-moss {
+      background: #ECEFE9;
+      color: #525646;
+      border: 1px solid #D5DACB;
+    }
+
+    /* Navigation Bar - Strict Single Line & Forest Green Active State */
+    .nav-link {
+      white-space: nowrap !important;
+      flex-shrink: 0 !important;
+      padding: 0.45rem 0.9rem;
+      border-radius: 9999px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      line-height: 1.4;
+      color: #3D5A4C;
+      transition: all 0.22s ease;
+    }
+
+    .nav-link:hover {
+      color: #1B4332;
+      background-color: #E9F5EC;
+    }
+
+    .nav-link.active {
+      background: linear-gradient(135deg, #1B4332 0%, #2D6A4F 100%);
+      color: #FFFFFF;
+      box-shadow: 0 4px 14px rgba(27, 67, 50, 0.22);
+    }
+
+    /* WOW Chart Track with Subtle Diagonal Stripes */
+    .chart-track {
+      background-color: #EBF3EE;
+      background-image: repeating-linear-gradient(45deg,
+          rgba(64, 145, 108, 0.06),
+          rgba(64, 145, 108, 0.06) 6px,
+          transparent 6px,
+          transparent 12px);
+      border-radius: 9999px;
+      height: 16px;
+      padding: 2px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: inset 0 1px 3px rgba(27, 67, 50, 0.08);
+    }
+
+    .chart-fill-emerald {
+      background: linear-gradient(90deg, #1B4332 0%, #2D6A4F 45%, #52B788 100%);
+      height: 100%;
+      border-radius: 9999px;
+      position: relative;
+      transition: width 1s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .chart-fill-teal {
+      background: linear-gradient(90deg, #1E5F61 0%, #38A3A5 60%, #68C3C5 100%);
+      height: 100%;
+      border-radius: 9999px;
+      position: relative;
+    }
+
+    .chart-fill-moss {
+      background: linear-gradient(90deg, #525646 0%, #7D8468 60%, #A4AC86 100%);
+      height: 100%;
+      border-radius: 9999px;
+      position: relative;
+    }
+
+    .chart-fill-amber {
+      background: linear-gradient(90deg, #7D6D51 0%, #A39171 60%, #C4B393 100%);
+      height: 100%;
+      border-radius: 9999px;
+      position: relative;
+    }
+
+    .chart-dot {
+      position: absolute;
+      right: 3px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 8px;
+      height: 8px;
+      border-radius: 9999px;
+      background: #FFFFFF;
+      box-shadow: 0 0 6px rgba(255, 255, 255, 0.9);
+    }
+
+    /* WOW Elevated Floating Card-Row Tables */
+    .wow-table-wrap {
+      padding: 0.5rem 1.25rem 1.25rem 1.25rem;
+    }
+
+    .wow-table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0 10px;
+    }
+
+    .wow-table thead th {
+      color: #4A6B5B;
+      font-weight: 800;
+      text-transform: uppercase;
+      font-size: 0.72rem;
+      letter-spacing: 0.06em;
+      padding: 0.65rem 1.25rem;
+      border: none;
+    }
+
+    .wow-table tbody tr {
+      background-color: #FFFFFF;
+      box-shadow: 0 3px 12px -2px rgba(27, 67, 50, 0.05);
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .wow-table tbody tr:hover {
+      transform: translateY(-2px) scale(1.002);
+      box-shadow: 0 10px 24px -6px rgba(27, 67, 50, 0.12);
+      background-color: #FAF9F5;
+    }
+
+    .wow-table tbody td {
+      padding: 1.1rem 1.25rem;
+      vertical-align: middle;
+      line-height: 1.85;
+      color: #233D30;
+      border-top: 1px solid rgba(64, 145, 108, 0.14);
+      border-bottom: 1px solid rgba(64, 145, 108, 0.14);
+    }
+
+    .wow-table tbody td:first-child {
+      border-left: 4px solid #40916C;
+      border-top-left-radius: 16px;
+      border-bottom-left-radius: 16px;
+    }
+
+    .wow-table tbody td:last-child {
+      border-right: 1px solid rgba(64, 145, 108, 0.14);
+      border-top-right-radius: 16px;
+      border-bottom-right-radius: 16px;
+    }
+
+    .wow-table tbody tr.row-later td:first-child {
+      border-left-color: #A39171;
+    }
+
+    .wow-table tbody tr.row-highlight {
+      background: linear-gradient(90deg, #F2F9F5 0%, #FFFFFF 100%);
+    }
+
+    .wow-table tbody tr.row-highlight td:first-child {
+      border-left-color: #1B4332;
+    }
+
+    /* Hide scrollbar for clean nav on mobile */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none !important;
+    }
+
+    .no-scrollbar {
+      -ms-overflow-style: none !important;
+      scrollbar-width: none !important;
+    }
+
+    /* Modal Backdrop */
+    .modal-backdrop {
+      background-color: rgba(19, 47, 35, 0.85);
+      backdrop-filter: blur(8px);
+    }
+  </style>
+</head>
+
+<body class="botanical-bg text-forest-800 selection:bg-mint-200 selection:text-forest-800">
+
+  <!-- ================= STICKY HEADER (NO FIGMA BUTTON, FULL 9 ITEMS ON 1 LINE) ================= -->
+  <header class="sticky top-0 z-40 bg-white/85 backdrop-blur-xl border-b border-forest-500/15">
+    <div class="page-container h-16 flex items-center justify-between gap-4">
+
+      <!-- Brand Logo -->
+      <a href="#" class="flex items-center gap-3 flex-shrink-0 group">
+        <div
+          class="w-9 h-9 rounded-2xl bg-gradient-to-br from-forest-700 to-forest-500 flex items-center justify-center text-white font-heading font-black text-lg shadow-sm group-hover:rotate-6 transition">
+          R
+        </div>
+        <div class="leading-tight">
+          <div class="flex items-center gap-2">
+            <span class="font-heading font-black text-base text-forest-700 tracking-tight">Ready-to-Work</span>
+          </div>
+          <span class="text-[11px] text-forest-500 font-medium hidden sm:inline-block">Micro-LMS Tinh Gọn Cho SME</span>
+        </div>
+      </a>
+
+      <!-- All 9 Navigation Items - Clean, Unobstructed, Single Line -->
+      <nav class="flex items-center gap-1.5 overflow-x-auto no-scrollbar py-1">
+        <a href="#context" class="nav-link active">01. Market</a>
+        <a href="#interview" class="nav-link">02. Interview</a>
+        <a href="#persona" class="nav-link">03. Persona</a>
+        <a href="#as-is" class="nav-link">04. As-Is</a>
+        <a href="#problem" class="nav-link">05. Problem</a>
+        <a href="#story-map" class="nav-link">06. Story Map</a>
+        <a href="#to-be" class="nav-link">07. To-Be</a>
+        <a href="#mockup" class="nav-link">08. Mockup</a>
+        <a href="#erd" class="nav-link">09. ERD</a>
+      </nav>
+
+    </div>
+  </header>
+
+
+  <!-- ================= HERO SECTION (SOOTHING BOTANICAL GREEN THEME) ================= -->
+  <section class="relative pt-16 pb-20 border-b border-forest-500/10 overflow-hidden">
+    <div class="page-container text-center">
+      <!-- Top Botanical Pill -->
+      <div
+        class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-mint-100/80 border border-mint-200 text-xs font-bold text-forest-700 mb-6 shadow-sm">
+        <span>🌱</span>
+        <span>Case Study Hệ Thống Đào Tạo Nội Bộ Tinh Gọn Cho Doanh Nghiệp</span>
+      </div>
+
+      <!-- Main Hero Title -->
+      <h1
+        class="text-4xl sm:text-5xl lg:text-6xl font-heading font-black text-forest-700 tracking-tight leading-[1.28] mb-6 max-w-4xl mx-auto">
+        Giải phóng Senior khỏi <br class="hidden sm:block">
+        <span class="bg-gradient-to-r from-forest-600 via-forest-500 to-teal-500 bg-clip-text text-transparent">gánh
+          nặng kèm cặp thủ công</span>
+      </h1>
+
+      <p class="text-forest-700/80 text-base sm:text-lg max-w-3xl mx-auto mb-10 font-normal leading-[1.9]">
+        Nối liền một mạch từ <strong class="text-forest-700">học liệu ngắn (&le; 5 phút)</strong> &rarr; <strong
+          class="text-forest-700">trắc nghiệm Excel tự chấm</strong> &rarr; <strong class="text-forest-700">cảnh báo hỗ
+          trợ kịp thời</strong> để giúp doanh nghiệp SME đánh giá nhân sự mới sẵn sàng vào việc.
+      </p>
+
+      <!-- Visual 3-Step Flow Pills -->
+      <div
+        class="inline-flex flex-wrap items-center justify-center gap-3 bg-white/90 backdrop-blur-md p-3.5 rounded-3xl border border-forest-500/15 shadow-sm">
+        <div
+          class="flex items-center gap-2 px-4 py-2.5 rounded-2xl bg-forest-50 text-forest-700 border border-forest-200 text-xs sm:text-sm font-bold">
+          <span>🎬</span>
+          <span>1. Học liệu ngắn &le; 5 phút</span>
+        </div>
+        <span class="text-forest-400 font-black">&rarr;</span>
+        <div
+          class="flex items-center gap-2 px-4 py-2.5 rounded-2xl bg-teal-50 text-teal-600 border border-teal-200 text-xs sm:text-sm font-bold">
+          <span>⚡</span>
+          <span>2. Nhập đề Excel tự chấm ngay</span>
+        </div>
+        <span class="text-forest-400 font-black">&rarr;</span>
+        <div
+          class="flex items-center gap-2 px-4 py-2.5 rounded-2xl bg-mint-100/70 text-forest-700 border border-mint-200 text-xs sm:text-sm font-bold">
+          <span>🎯</span>
+          <span>3. Sẵn sàng làm việc (Tiến độ &ge; 90%)</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ================= 01. MARKET CONTEXT (WOW RADIAL CHARTS + BOTANICAL DATA VIZ + FLOATING TABLE) ================= -->
+  <section id="context" class="py-20 page-container">
+    <!-- Section Title -->
+    <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-3 mb-10">
+      <div>
+        <span class="pill pill-mint mb-2.5">01 &bull; Market Context</span>
+        <h2 class="text-2xl sm:text-3xl font-heading font-black text-forest-700">Bối cảnh & Khoảng trống thị trường</h2>
+      </div>
+      <p class="text-xs sm:text-sm text-forest-600/80 font-medium">Nguồn: Tổng cục Thống kê, WEF 2025, ATD 2025, Viettel
+        Academy/VNU, Tanca 2026</p>
+    </div>
+
+    <!-- 4 WOW KPI Cards with Embedded SVG Radial Rings & Sparklines -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+
+      <!-- KPI 1: 97.4% SME with SVG Donut Ring -->
+      <div class="bento-card p-6 flex items-center justify-between gap-4">
+        <div>
+          <span class="pill pill-mint mb-2.5">Quy mô doanh nghiệp</span>
+          <div class="text-3xl sm:text-4xl font-heading font-black text-forest-700">97,4%</div>
+          <p class="text-sm font-bold text-forest-800 mt-1">Tỷ lệ SME tại Việt Nam</p>
+          <p class="text-xs text-forest-600/75 mt-1">~900.000–930.000 DN hoạt động</p>
+        </div>
+        <div class="w-20 h-20 flex-shrink-0 relative flex items-center justify-center">
+          <svg class="w-full h-full -rotate-90" viewBox="0 0 36 36">
+            <path class="text-forest-100" stroke-width="3.8" stroke="currentColor" fill="none"
+              d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+            <path class="text-forest-500" stroke-dasharray="97.4, 100" stroke-width="3.8" stroke-linecap="round"
+              stroke="currentColor" fill="none"
+              d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+          </svg>
+          <span class="absolute text-[11px] font-black text-forest-700">SME</span>
+        </div>
+      </div>
+
+      <!-- KPI 2: 70% Retraining with SVG Radial Gauge -->
+      <div class="bento-card p-6 flex items-center justify-between gap-4">
+        <div>
+          <span class="pill pill-teal mb-2.5">Chất lượng đầu vào</span>
+          <div class="text-3xl sm:text-4xl font-heading font-black text-teal-600">70%</div>
+          <p class="text-sm font-bold text-forest-800 mt-1">SV mới phải đào tạo lại</p>
+          <p class="text-xs text-forest-600/75 mt-1">Viettel Academy/VNU (2026)</p>
+        </div>
+        <div class="w-20 h-20 flex-shrink-0 relative flex items-center justify-center">
+          <svg class="w-full h-full -rotate-90" viewBox="0 0 36 36">
+            <path class="text-teal-100" stroke-width="3.8" stroke="currentColor" fill="none"
+              d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+            <path class="text-teal-500" stroke-dasharray="70, 100" stroke-width="3.8" stroke-linecap="round"
+              stroke="currentColor" fill="none"
+              d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+          </svg>
+          <span class="absolute text-[11px] font-black text-teal-600">70%</span>
+        </div>
+      </div>
+
+      <!-- KPI 3: ~80% vs ~20% Dual Visual Comparison Pillars -->
+      <div class="bento-card p-6 flex items-center justify-between gap-4">
+        <div>
+          <span class="pill pill-forest mb-2.5">Hiệu quả Micro-learning</span>
+          <div class="text-3xl sm:text-4xl font-heading font-black text-forest-600">~80% <span
+              class="text-sm text-forest-600/60 font-bold">vs ~20%</span></div>
+          <p class="text-sm font-bold text-forest-800 mt-1">Hoàn thành bài ngắn vs dài</p>
+          <p class="text-xs text-forest-600/75 mt-1">Báo cáo Continu 2025</p>
+        </div>
+        <div class="flex items-end gap-2 h-16 px-2 pt-2 bg-forest-50 rounded-2xl border border-forest-100">
+          <div class="flex flex-col items-center gap-1">
+            <div class="w-4 h-11 rounded-t-md bg-gradient-to-t from-forest-700 to-forest-400"></div>
+            <span class="text-[9px] font-extrabold text-forest-700">80%</span>
+          </div>
+          <div class="flex flex-col items-center gap-1">
+            <div class="w-4 h-3 rounded-t-md bg-amber-200"></div>
+            <span class="text-[9px] font-bold text-amber-600">20%</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- KPI 4: 17.4h -> 13.7h with Mini Area Trend SVG -->
+      <div class="bento-card p-6 flex items-center justify-between gap-4">
+        <div>
+          <span class="pill pill-amber mb-2.5">Quỹ giờ đào tạo</span>
+          <div class="text-2xl sm:text-3xl font-heading font-black text-amber-600">17,4h &rarr; 13,7h</div>
+          <p class="text-sm font-bold text-forest-800 mt-1">Giờ đào tạo/nhân viên</p>
+          <p class="text-xs text-forest-600/75 mt-1">Giảm từ 2023 sang 2024 (ATD)</p>
+        </div>
+        <div class="w-20 h-16 flex-shrink-0 flex items-center">
+          <svg viewBox="0 0 80 50" class="w-full h-full overflow-visible">
+            <defs>
+              <linearGradient id="sparkGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#40916C" stop-opacity="0.35" />
+                <stop offset="100%" stop-color="#40916C" stop-opacity="0.0" />
+              </linearGradient>
+            </defs>
+            <path d="M5 12 Q 40 16, 75 36 L 75 48 L 5 48 Z" fill="url(#sparkGrad)" />
+            <path d="M5 12 Q 40 16, 75 36" fill="none" stroke="#2D6A4F" stroke-width="3" stroke-linecap="round" />
+            <circle cx="5" cy="12" r="4" fill="#1B4332" />
+            <circle cx="75" cy="36" r="4" fill="#A39171" />
+          </svg>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 2-Column Bento: WOW Botanical Chart (Left) & Elevated Floating Card-Row Table (Right) -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+
+      <!-- Left: WOW Botanical Glass Horizontal Bar Chart -->
+      <div class="lg:col-span-5 bento-card p-7 flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between mb-7">
+            <div>
+              <h3 class="font-heading font-extrabold text-forest-700 text-lg">Chỉ số nhu cầu & hiệu quả đào tạo (%)</h3>
+              <p class="text-xs text-forest-600/70">Tổng hợp số liệu báo cáo thị trường 2021–2026</p>
+            </div>
+            <span class="pill pill-mint">📊 Data Viz</span>
+          </div>
+
+          <div class="space-y-6 text-sm">
+            <!-- Bar 1: 85% -->
+            <div class="group">
+              <div class="flex justify-between items-center font-bold mb-2">
+                <span class="text-forest-800">Nhà tuyển dụng ưu tiên nâng cao kỹ năng</span>
+                <span class="px-2.5 py-0.5 rounded-full bg-forest-700 text-white text-xs font-extrabold shadow-sm">85%
+                  &bull; WEF 2025</span>
+              </div>
+              <div class="chart-track">
+                <div class="chart-fill-emerald" style="width:85%">
+                  <span class="chart-dot"></span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Bar 2: 70% -->
+            <div class="group">
+              <div class="flex justify-between items-center font-bold mb-2">
+                <span class="text-forest-800">Sinh viên mới ra trường phải đào tạo lại</span>
+                <span class="px-2.5 py-0.5 rounded-full bg-teal-600 text-white text-xs font-extrabold shadow-sm">70%
+                  &bull; Viettel/VNU</span>
+              </div>
+              <div class="chart-track">
+                <div class="chart-fill-teal" style="width:70%">
+                  <span class="chart-dot"></span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Bar 3: 52% -->
+            <div class="group">
+              <div class="flex justify-between items-center font-bold mb-2">
+                <span class="text-forest-800">Kỳ vọng e-learning nổi bật nhất 5 năm tới</span>
+                <span class="px-2.5 py-0.5 rounded-full bg-forest-500 text-white text-xs font-extrabold shadow-sm">52%
+                  &bull; Navigos</span>
+              </div>
+              <div class="chart-track">
+                <div class="chart-fill-emerald" style="width:52%">
+                  <span class="chart-dot"></span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Bar 4: 46% -->
+            <div class="group">
+              <div class="flex justify-between items-center font-bold mb-2">
+                <span class="text-forest-800">Tổ chức không đo được ROI đào tạo</span>
+                <span class="px-2.5 py-0.5 rounded-full bg-amber-600 text-white text-xs font-extrabold shadow-sm">46%
+                  &bull; Tanca 2026</span>
+              </div>
+              <div class="chart-track">
+                <div class="chart-fill-amber" style="width:46%">
+                  <span class="chart-dot"></span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Bar 5: 39% -->
+            <div class="group">
+              <div class="flex justify-between items-center font-bold mb-2">
+                <span class="text-forest-800">Kỹ năng thay đổi hoặc lỗi thời 2025–2030</span>
+                <span class="px-2.5 py-0.5 rounded-full bg-moss-600 text-white text-xs font-extrabold shadow-sm">39%
+                  &bull; WEF 2025</span>
+              </div>
+              <div class="chart-track">
+                <div class="chart-fill-moss" style="width:39%">
+                  <span class="chart-dot"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Scale Axis -->
+          <div class="flex justify-between text-[11px] font-bold text-forest-500/70 mt-3 px-1">
+            <span>0%</span>
+            <span>25%</span>
+            <span>50%</span>
+            <span>75%</span>
+            <span>100%</span>
+          </div>
+        </div>
+
+        <div
+          class="mt-6 pt-5 border-t border-forest-100 flex flex-wrap items-center justify-between gap-2 text-xs text-forest-600">
+          <span class="font-bold">3 Nhóm khách hàng mục tiêu:</span>
+          <div class="flex flex-wrap gap-2">
+            <span class="pill pill-forest">Quản lý / Đào tạo viên</span>
+            <span class="pill pill-mint">Nhân sự mới (Fresher)</span>
+            <span class="pill pill-teal">Nhân sự 2–4 năm</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Elevated Floating Card-Row Competitor Matrix -->
+      <div class="lg:col-span-7 bento-card p-6 sm:p-7 flex flex-col justify-between bg-forest-50/40">
+        <div>
+          <div class="flex items-center justify-between mb-3 px-2">
+            <div>
+              <h3 class="font-heading font-extrabold text-forest-700 text-lg">Đối chiếu giải pháp hiện có & Điểm khác
+                biệt</h3>
+              <p class="text-xs text-forest-600/70">So sánh trực diện các nhóm công cụ đào tạo nội bộ</p>
+            </div>
+            <span class="pill pill-forest">✨ Floating Matrix</span>
+          </div>
+
+          <div class="overflow-x-auto wow-table-wrap">
+            <table class="wow-table text-sm text-left">
+              <thead>
+                <tr>
+                  <th>Tiêu chí cốt lõi</th>
+                  <th>Zalo / Classroom</th>
+                  <th>LMS Tổng Quát</th>
+                  <th>FPT.AI Mentor</th>
+                  <th class="text-forest-700">Ready-to-Work (Nhóm)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="font-bold text-forest-800">Chi phí & Vận hành</td>
+                  <td><span class="text-xs text-moss-600">Rẻ nhưng rời rạc, thủ công</span></td>
+                  <td><span class="text-xs text-amber-600">Cồng kềnh, bản quyền đắt</span></td>
+                  <td><span class="text-xs text-amber-600">Chi phí cao với SME</span></td>
+                  <td><span class="pill pill-mint">🌿 Tinh gọn, chi phí hợp lý</span></td>
+                </tr>
+                <tr>
+                  <td class="font-bold text-forest-800">Kiểm soát bài học</td>
+                  <td><span class="text-xs text-amber-600">Chỉ upload file đơn thuần</span></td>
+                  <td><span class="text-xs text-amber-600">Không chốt chặn độ dài</span></td>
+                  <td><span class="text-xs text-teal-600">Micro-learning thích ứng</span></td>
+                  <td><span class="pill pill-mint">🎬 Video &le; 5p, tiến độ &ge; 90%</span></td>
+                </tr>
+                <tr>
+                  <td class="font-bold text-forest-800">Kiểm tra & Chấm bài</td>
+                  <td><span class="text-xs text-amber-600">Quản lý phải chấm tay</span></td>
+                  <td><span class="text-xs text-amber-600">Ma trận đề phức tạp</span></td>
+                  <td><span class="text-xs text-teal-600">Quiz mini hằng ngày</span></td>
+                  <td><span class="pill pill-mint">⚡ Nhập Excel + Tự chấm ngay</span></td>
+                </tr>
+                <tr>
+                  <td class="font-bold text-forest-800">Phát hiện hỗ trợ</td>
+                  <td><span class="text-xs text-amber-600">Tin nhắn trôi, khó tổng hợp</span></td>
+                  <td><span class="text-xs text-amber-600">Báo cáo rời rạc</span></td>
+                  <td><span class="text-xs text-teal-600">Báo cáo theo phòng ban</span></td>
+                  <td><span class="pill pill-mint">🔔 Cảnh báo trượt quá N lần</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Market Gap Highlight Pill Box -->
+        <div
+          class="mt-2 mx-2 p-4 rounded-2xl bg-gradient-to-r from-mint-100/80 to-teal-50/70 border border-mint-200 flex items-start gap-3.5">
+          <span class="text-xl mt-0.5">🌿</span>
+          <p class="text-sm text-forest-800 leading-[1.85]">
+            <strong class="text-forest-700">Khoảng trống thị trường:</strong> Chưa thấy công cụ nào nối gọn trong một
+            luồng cho SME Việt Nam: <em>(1) Nội dung ngắn & tiến độ học &ge; 90%</em>, <em>(2) Bằng chứng kiểm tra tự
+              động sau đào tạo</em> và <em>(3) Quyết định "Sẵn sàng làm việc" kèm cảnh báo người cần hỗ trợ</em>.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ================= 02. USER INTERVIEW (FULL HEAD & SHOULDERS VISIBLE, 50% CARD HEIGHT) ================= -->
+  <section id="interview" class="py-20 bg-white/60 border-y border-forest-500/10">
+    <div class="page-container">
+
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-3 mb-10">
+        <div>
+          <span class="pill pill-forest mb-2.5">02 &bull; User Interview</span>
+          <h2 class="text-2xl sm:text-3xl font-heading font-black text-forest-700">Phỏng vấn thực tế 3 vai trò trong
+            doanh nghiệp</h2>
+        </div>
+        <span class="text-xs sm:text-sm text-forest-600/80 font-medium">3 phiên phỏng vấn sâu tại doanh nghiệp công nghệ
+          (28 – 35 phút)</span>
+      </div>
+
+      <!-- 3 Cards: Top 50% Natural Medium-Shot Portrait (No Face Cropping), Bottom 50% Insights -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+        <!-- Card 1: Nguyễn Hoàng Hải -->
+        <div class="bento-card overflow-hidden flex flex-col h-[540px]">
+          <div class="h-1/2 w-full relative overflow-hidden bg-forest-50">
+            <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=900&q=85"
+              alt="Nguyễn Hoàng Hải" class="portrait-img" style="object-position: center 20%;">
+            <span class="absolute top-3.5 left-3.5 pill pill-mint shadow-sm">Phỏng vấn 1 &bull; Fresher</span>
+            <span
+              class="absolute bottom-3.5 left-3.5 bg-forest-800/80 backdrop-blur-md text-white text-xs font-semibold px-3.5 py-1 rounded-full">
+              ⏱ Phỏng vấn: 35 phút
+            </span>
+          </div>
+          <div class="h-1/2 p-6 flex flex-col justify-between bg-white">
+            <div>
+              <div class="flex items-center justify-between">
+                <h3 class="font-heading font-black text-xl text-forest-700">Nguyễn Hoàng Hải</h3>
+                <span class="text-xs text-forest-500 font-semibold">PV: Nguyễn Bá Phúc</span>
+              </div>
+              <p class="text-sm italic text-forest-600 font-medium mt-2 leading-[1.8]">
+                "Tôi không thiếu tài liệu để học, mà thiếu cách biết mình học đúng hay chưa và nhận xét cá nhân phải đợi
+                đến buổi họp chung."
+              </p>
+            </div>
+            <div class="space-y-2 text-xs">
+              <div class="px-3.5 py-2 rounded-xl bg-amber-50 text-amber-600 border border-amber-200/60 font-medium">
+                <strong>⚠️ Pain points:</strong> Tài liệu con quá nhiều, video dài 1–2h gây ngợp; trôi link nộp bài.
+              </div>
+              <div class="px-3.5 py-2 rounded-xl bg-mint-50 text-forest-700 border border-mint-200/70 font-medium">
+                <strong>✨ Kỳ vọng:</strong> Video ngắn có trình tự rõ ràng, tối ưu chấm bài và nhận xét nhanh.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: Phạm Thanh Tâm -->
+        <div class="bento-card overflow-hidden flex flex-col h-[540px]">
+          <div class="h-1/2 w-full relative overflow-hidden bg-forest-50">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=900&q=85"
+              alt="Phạm Thanh Tâm" class="portrait-img" style="object-position: center 20%;">
+            <span class="absolute top-3.5 left-3.5 pill pill-teal shadow-sm">Phỏng vấn 2 &bull; NV 2–4 năm</span>
+            <span
+              class="absolute bottom-3.5 left-3.5 bg-forest-800/80 backdrop-blur-md text-white text-xs font-semibold px-3.5 py-1 rounded-full">
+              ⏱ Phỏng vấn: 32 phút
+            </span>
+          </div>
+          <div class="h-1/2 p-6 flex flex-col justify-between bg-white">
+            <div>
+              <div class="flex items-center justify-between">
+                <h3 class="font-heading font-black text-xl text-forest-700">Phạm Thanh Tâm</h3>
+                <span class="text-xs text-forest-500 font-semibold">PV: Vũ Việt Thành</span>
+              </div>
+              <p class="text-sm italic text-forest-600 font-medium mt-2 leading-[1.8]">
+                "Đối với tôi việc học luôn đứng sau dự án: vừa học vừa kèm Fresher, nên mọi việc tốn thêm thời gian đều
+                lấy thẳng từ giờ làm dự án."
+              </p>
+            </div>
+            <div class="space-y-2 text-xs">
+              <div class="px-3.5 py-2 rounded-xl bg-amber-50 text-amber-600 border border-amber-200/60 font-medium">
+                <strong>⚠️ Pain points:</strong> Trễ tiến độ dự án vì kèm Fresher và quản lý bài giao thủ công.
+              </div>
+              <div class="px-3.5 py-2 rounded-xl bg-mint-50 text-forest-700 border border-mint-200/70 font-medium">
+                <strong>✨ Kỳ vọng:</strong> Kho tài liệu chia theo tuần/chương, chấm bài & trả nhận xét tự động.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3: Đỗ Minh Anh -->
+        <div class="bento-card overflow-hidden flex flex-col h-[540px]">
+          <div class="h-1/2 w-full relative overflow-hidden bg-forest-50">
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=900&q=85"
+              alt="Đỗ Minh Anh" class="portrait-img" style="object-position: center 18%;">
+            <span class="absolute top-3.5 left-3.5 pill pill-forest shadow-sm">Phỏng vấn 3 &bull; Senior Trainer</span>
+            <span
+              class="absolute bottom-3.5 left-3.5 bg-forest-800/80 backdrop-blur-md text-white text-xs font-semibold px-3.5 py-1 rounded-full">
+              ⏱ Phỏng vấn: 28 phút
+            </span>
+          </div>
+          <div class="h-1/2 p-6 flex flex-col justify-between bg-white">
+            <div>
+              <div class="flex items-center justify-between">
+                <h3 class="font-heading font-black text-xl text-forest-700">Đỗ Minh Anh</h3>
+                <span class="text-xs text-forest-500 font-semibold">PV: Nguyễn Thị Trang</span>
+              </div>
+              <p class="text-sm italic text-forest-600 font-medium mt-2 leading-[1.8]">
+                "Chúng tôi không muốn trở thành thầy giáo hay người gác cổng thủ công, chúng tôi muốn tập trung vào kết
+                quả công việc."
+              </p>
+            </div>
+            <div class="space-y-2 text-xs">
+              <div class="px-3.5 py-2 rounded-xl bg-amber-50 text-amber-600 border border-amber-200/60 font-medium">
+                <strong>⚠️ Pain points:</strong> Chấm bài tốn thời gian, phân công giao bài hay nhầm, lịch bị trôi.
+              </div>
+              <div class="px-3.5 py-2 rounded-xl bg-mint-50 text-forest-700 border border-mint-200/70 font-medium">
+                <strong>✨ Kỳ vọng:</strong> Tích hợp trắc nghiệm tự chấm và trả feedback tự động.
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ================= 03. USER PERSONA (50% CARD WIDTH, NATURAL PORTRAIT FRAMING) ================= -->
+  <section id="persona" class="py-20 page-container">
+    <div class="mb-10">
+      <span class="pill pill-mint mb-2.5">03 &bull; User Persona</span>
+      <h2 class="text-2xl sm:text-3xl font-heading font-black text-forest-700">Chân dung người dùng đại diện</h2>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+
+      <!-- Persona 1: Nguyễn Minh Khang (50% Left Image / 50% Right Content) -->
+      <div class="bento-card overflow-hidden flex flex-col sm:flex-row min-h-[420px]">
+        <div class="sm:w-1/2 w-full h-80 sm:h-auto relative bg-forest-50 flex-shrink-0 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=900&q=85"
+            alt="Nguyễn Minh Khang" class="portrait-img" style="object-position: center 18%;">
+          <div
+            class="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-md p-3.5 rounded-2xl shadow-sm border border-forest-100">
+            <span class="pill pill-mint mb-1">Persona 01 &bull; Fresher (&lt;1 năm KN)</span>
+            <h3 class="font-heading font-black text-lg text-forest-700">Nguyễn Minh Khang, 23 tuổi</h3>
+            <p class="text-xs text-forest-600/80">Công ty công nghệ TECHPRO</p>
+          </div>
+        </div>
+
+        <div class="sm:w-1/2 w-full p-6 flex flex-col justify-between bg-white">
+          <div class="space-y-4">
+            <div>
+              <span class="text-xs font-extrabold uppercase tracking-wider text-forest-600 block mb-2">🎯 Mục tiêu
+                (Goals)</span>
+              <ul class="text-xs sm:text-sm text-forest-800 space-y-1.5 list-disc pl-4">
+                <li>Có lộ trình tài liệu rõ ràng, sắp theo trình tự</li>
+                <li>Học qua video ngắn thay vì video dài 1–2 tiếng</li>
+                <li>Biết mình học đúng chưa và nhận nhận xét nhanh</li>
+              </ul>
+            </div>
+
+            <div>
+              <span class="text-xs font-extrabold uppercase tracking-wider text-amber-600 block mb-2">⚠️ Nỗi đau
+                (Frustrations)</span>
+              <ul class="text-xs sm:text-sm text-forest-800 space-y-1.5 list-disc pl-4">
+                <li>Nhiều tài liệu con khó tra cứu; link nộp bài bị trôi</li>
+                <li>Ít được nhận xét cá nhân, phải đợi buổi họp chung</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="mt-5 pt-4 border-t border-forest-100 text-xs text-forest-600">
+            <strong class="text-forest-800">Hành vi:</strong> Nhận tài liệu &rarr; Tự học &rarr; Báo sếp &rarr; Thực
+            hành cùng Senior/Middle.
+          </div>
+        </div>
+      </div>
+
+      <!-- Persona 2: Đỗ Minh Anh (50% Left Image / 50% Right Content) -->
+      <div class="bento-card overflow-hidden flex flex-col sm:flex-row min-h-[420px]">
+        <div class="sm:w-1/2 w-full h-80 sm:h-auto relative bg-forest-50 flex-shrink-0 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=900&q=85"
+            alt="Đỗ Minh Anh" class="portrait-img" style="object-position: center 18%;">
+          <div
+            class="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-md p-3.5 rounded-2xl shadow-sm border border-forest-100">
+            <span class="pill pill-forest mb-1">Persona 02 &bull; Quản lý dự án (7+ năm KN)</span>
+            <h3 class="font-heading font-black text-lg text-forest-700">Đỗ Minh Anh, 31 tuổi</h3>
+            <p class="text-xs text-forest-600/80">Quản lý nhóm dự án tại TECHPRO</p>
+          </div>
+        </div>
+
+        <div class="sm:w-1/2 w-full p-6 flex flex-col justify-between bg-white">
+          <div class="space-y-4">
+            <div>
+              <span class="text-xs font-extrabold uppercase tracking-wider text-forest-600 block mb-2">🎯 Mục tiêu
+                (Goals)</span>
+              <ul class="text-xs sm:text-sm text-forest-800 space-y-1.5 list-disc pl-4">
+                <li>Giải quyết khâu chấm và trả feedback tự động hơn</li>
+                <li>Lịch giao bài và trả bài rõ ràng, không nhầm lẫn</li>
+                <li>Dành thời gian cho dự án thật, không bị đào tạo lấn sang</li>
+              </ul>
+            </div>
+
+            <div>
+              <span class="text-xs font-extrabold uppercase tracking-wider text-amber-600 block mb-2">⚠️ Nỗi đau
+                (Frustrations)</span>
+              <ul class="text-xs sm:text-sm text-forest-800 space-y-1.5 list-disc pl-4">
+                <li>Chấm bài tốn thời gian, phải giao phó cho Middle</li>
+                <li>Trễ tiến độ dự án thật; tài liệu phân tán nhiều nơi</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="mt-5 pt-4 border-t border-forest-100 text-xs italic text-forest-600 font-semibold">
+            "Chúng tôi không muốn làm người gác cổng thủ công, mà muốn làm HLV tập trung vào kết quả."
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ================= 04. BPMN AS-IS (VISUAL BOTTLENECK FLOW) ================= -->
+  <section id="to-be" class="py-20 page-container">
+    <!-- Header: 2 dòng -->
+    <div class="mb-8">
+      <span class="pill pill-amber mb-2.5">04 &bull; BPMN As-Is</span>
+      <h2 class="text-2xl sm:text-3xl font-heading font-black text-forest-700">
+        Quy trình đào tạo thủ công hiện tại (As-Is)
+      </h2>
+    </div>
+
+    <!-- Clean Diagram Showcase (Click to Zoom) -->
+    <div class="bento-card p-5 sm:p-7 bg-white">
+      <div id="flowView1" class="block">
+        <div class="relative bg-forest-50/50 rounded-2xl border border-forest-100 overflow-hidden cursor-pointer group"
+          onclick="openModalWithImg('img/as-is.png', 'Luồng AS-IS')">
+          <img src="img/as-is.png" alt="BPMN Luồng AS-IS"
+            class="w-full h-auto max-h-[600px] object-contain mx-auto group-hover:scale-[1.01] transition">
+          <span
+            class="absolute bottom-4 right-4 bg-forest-800/90 text-white text-xs font-bold px-4 py-2 rounded-full shadow-sm">
+            🔍 Phóng to sơ đồ 1
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ================= 05. PROBLEM & FIT MATRIX (FLOATING CARD-ROW TABLE) ================= -->
+  <section id="problem" class="py-20 page-container">
+    <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
+      <div>
+        <span class="pill pill-forest mb-2.5">05 &bull; Problem Statement & Solution Fit</span>
+        <h2 class="text-2xl sm:text-3xl font-heading font-black text-forest-700">Truy vết Điểm đau (P1–P8) & Ma trận
+          Giải pháp</h2>
+      </div>
+
+      <!-- Filter Pills -->
+      <div class="flex items-center gap-1.5 bg-forest-100/70 p-1.5 rounded-full text-xs font-bold">
+        <button onclick="filterProblem('all')" id="probBtn-all"
+          class="prob-btn px-4 py-1.5 rounded-full bg-forest-700 text-white shadow-sm transition">Tất cả (9)</button>
+        <button onclick="filterProblem('mvp')" id="probBtn-mvp"
+          class="prob-btn px-4 py-1.5 rounded-full text-forest-700 hover:bg-white/60 transition">Giải quyết ở MVP
+          (6)</button>
+        <button onclick="filterProblem('later')" id="probBtn-later"
+          class="prob-btn px-4 py-1.5 rounded-full text-forest-700 hover:bg-white/60 transition">Giai đoạn sau
+          (3)</button>
+      </div>
+    </div>
+
+    <!-- WOW Floating Card-Row Fit Matrix Table -->
+    <div class="bento-card p-4 sm:p-6 bg-forest-50/40">
+      <div class="overflow-x-auto wow-table-wrap">
+        <table class="wow-table text-sm text-left">
+          <thead>
+            <tr>
+              <th class="w-28">Mã Điểm Đau</th>
+              <th class="w-1/4">Biểu hiện thực tế tại doanh nghiệp</th>
+              <th>Giải pháp trên hệ thống Ready-to-Work</th>
+              <th class="w-40 text-center">Phạm vi</th>
+              <th class="w-40 text-center">User Story</th>
+            </tr>
+          </thead>
+          <tbody id="problemGrid">
+            <tr class="prob-card" data-stage="mvp">
+              <td><span class="pill pill-forest">P1</span></td>
+              <td><strong class="text-forest-800">Tài liệu rải rác, nhầm file:</strong> Nội dung gửi nhiều nơi, nhiều
+                file con, phải nhắn xin lại.</td>
+              <td>Một kho tài liệu tập trung giao theo phòng ban/bộ phận, quản lý phiên bản và nhắc học lại khi cập
+                nhật.</td>
+              <td class="text-center"><span class="pill pill-mint">✅ MVP</span></td>
+              <td class="text-center"><span
+                  class="font-mono text-xs font-extrabold px-2.5 py-1 rounded-lg bg-forest-50 text-forest-700 border border-forest-200">US-04,
+                  US-07</span></td>
+            </tr>
+            <tr class="prob-card" data-stage="mvp">
+              <td><span class="pill pill-forest">P2</span></td>
+              <td><strong class="text-forest-800">Video quá dài (1–2 giờ):</strong> Gây quá tải thông tin, dẫn đến học
+                đối phó.</td>
+              <td>Quy tắc kiểm soát video &le; 5 phút (300 giây); vượt quá hệ thống báo lỗi và yêu cầu cắt nhỏ tải lại.
+              </td>
+              <td class="text-center"><span class="pill pill-mint">✅ MVP</span></td>
+              <td class="text-center"><span
+                  class="font-mono text-xs font-extrabold px-2.5 py-1 rounded-lg bg-forest-50 text-forest-700 border border-forest-200">US-04</span>
+              </td>
+            </tr>
+            <tr class="prob-card" data-stage="mvp">
+              <td><span class="pill pill-forest">P4</span></td>
+              <td><strong class="text-forest-800">Phản hồi chậm:</strong> Người chấm chỉ chấm khi rảnh, học viên phải
+                chờ 2–3 ngày hoặc hơn.</td>
+              <td>Bài kiểm tra trắc nghiệm tự chấm trả điểm (thang 10) và giải thích đáp án ngay lập tức sau khi nộp.
+              </td>
+              <td class="text-center"><span class="pill pill-mint">✅ MVP (Quiz)</span></td>
+              <td class="text-center"><span
+                  class="font-mono text-xs font-extrabold px-2.5 py-1 rounded-lg bg-forest-50 text-forest-700 border border-forest-200">US-09</span>
+              </td>
+            </tr>
+            <tr class="prob-card" data-stage="mvp">
+              <td><span class="pill pill-forest">P6</span></td>
+              <td><strong class="text-forest-800">Chấm và phản hồi thủ công:</strong> Middle phải đọc từng file, cấu
+                hình LMS truyền thống phức tạp.</td>
+              <td>Nhập đề trắc nghiệm từ file Excel (xuất file lỗi theo dòng để sửa nhanh), hệ thống tự chấm 100%.</td>
+              <td class="text-center"><span class="pill pill-mint">✅ MVP (Quiz)</span></td>
+              <td class="text-center"><span
+                  class="font-mono text-xs font-extrabold px-2.5 py-1 rounded-lg bg-forest-50 text-forest-700 border border-forest-200">US-05,
+                  06, 09</span></td>
+            </tr>
+            <tr class="prob-card" data-stage="mvp">
+              <td><span class="pill pill-forest">P7</span></td>
+              <td><strong class="text-forest-800">Lịch giao bài & tiến độ rải rác:</strong> Dễ nhầm lẫn hạn nộp, không
+                rõ học viên đã học tới đâu.</td>
+              <td>Thiết lập thời hạn học, thông báo trước hạn 3 ngày, theo dõi % tiến độ và tự hoàn thành khi đạt &ge;
+                90%.</td>
+              <td class="text-center"><span class="pill pill-mint">✅ MVP</span></td>
+              <td class="text-center"><span
+                  class="font-mono text-xs font-extrabold px-2.5 py-1 rounded-lg bg-forest-50 text-forest-700 border border-forest-200">US-07,
+                  08, 11</span></td>
+            </tr>
+            <tr class="prob-card row-highlight" data-stage="mvp">
+              <td><span class="pill pill-teal">🌟 Mới</span></td>
+              <td><strong class="text-forest-800">Nhận diện người cần hỗ trợ:</strong> Thiếu kết nối giữa tiến độ học,
+                điểm thi và cảnh báo sớm.</td>
+              <td>Cảnh báo tự động cho quản lý khi học viên trượt quá N lần; báo cáo danh sách cần hỗ trợ theo bộ phận.
+              </td>
+              <td class="text-center"><span class="pill pill-mint">✅ MVP</span></td>
+              <td class="text-center"><span
+                  class="font-mono text-xs font-extrabold px-2.5 py-1 rounded-lg bg-mint-100 text-forest-700 border border-mint-200">US-10,
+                  US-11</span></td>
+            </tr>
+            <tr class="prob-card row-later" data-stage="later">
+              <td><span class="pill pill-amber">P3</span></td>
+              <td><strong class="text-forest-800">Ngại hỏi người có kinh nghiệm:</strong> Thắc mắc trong lúc tự học
+                không được giải đáp.</td>
+              <td>Tích hợp khu vực hỏi đáp lưu lại trực tiếp trong bài học và trợ lý AI giải đáp 24/7.</td>
+              <td class="text-center"><span class="pill pill-amber">⏳ Sau MVP</span></td>
+              <td class="text-center text-forest-400 font-bold">&mdash;</td>
+            </tr>
+            <tr class="prob-card row-later" data-stage="later">
+              <td><span class="pill pill-amber">P5</span></td>
+              <td><strong class="text-forest-800">Trả lời lặp lại, tin nhắn cũ bị trôi:</strong> Làm ngắt quãng công
+                việc của Senior/đào tạo viên.</td>
+              <td>Xây dựng kho hỏi đáp (FAQ) lưu trữ câu trả lời từ các khóa trước để học viên sau tự tra cứu.</td>
+              <td class="text-center"><span class="pill pill-amber">⏳ Sau MVP</span></td>
+              <td class="text-center text-forest-400 font-bold">&mdash;</td>
+            </tr>
+            <tr class="prob-card row-later" data-stage="later">
+              <td><span class="pill pill-amber">P8</span></td>
+              <td><strong class="text-forest-800">Bài nộp qua nhiều kênh thất lạc:</strong> Không có nơi lưu trữ bài
+                thực hành tập trung.</td>
+              <td>Cổng nộp bài thực hành tập trung, chấm điểm và xác nhận thực hành bởi quản lý.</td>
+              <td class="text-center"><span class="pill pill-amber">⏳ Sau MVP</span></td>
+              <td class="text-center text-forest-400 font-bold">&mdash;</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ================= 06. USER STORY MAP (ELEVATED FLOATING CARD-ROW TABLES + SEARCH) ================= -->
+  <section id="story-map" class="py-20 bg-white/60 border-y border-forest-500/10">
+    <div class="page-container">
+
+      <!-- Section Header -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
+        <div>
+          <span class="pill pill-mint mb-2.5">06 &bull; User Story Map (Ba tầng: Activity &rarr; Task &rarr;
+            Story)</span>
+          <h2 class="text-2xl sm:text-3xl font-heading font-black text-forest-700">Cấu trúc User Story Map & Danh sách
+            12 Story MVP</h2>
+        </div>
+      </div>
+
+      <!-- BẢNG 6.1: KHUNG ACTIVITY -> TASK -> STORY -->
+      <div class="bento-card p-5 sm:p-7 bg-forest-50/40 mb-10">
+        <div class="flex items-center justify-between mb-3 px-2">
+          <div>
+            <h3 class="font-heading font-extrabold text-forest-700 text-base sm:text-lg">Bảng 6.1 &mdash; Khung Activity
+              &rarr; Task &rarr; Story</h3>
+            <p class="text-xs text-forest-600/75">Phân rã từ 4 nhóm hoạt động cốt lõi xuống nhiệm vụ và mã User Story
+            </p>
+          </div>
+          <span class="pill pill-forest">4 Nhóm Activity</span>
+        </div>
+        <div class="overflow-x-auto wow-table-wrap">
+          <table class="wow-table text-sm text-left">
+            <thead>
+              <tr>
+                <th class="w-1/4">Tầng 1: Activity (Hoạt động)</th>
+                <th>Tầng 2: Task (Nhiệm vụ chi tiết)</th>
+                <th class="w-52 text-center">Tầng 3: Mã User Story</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class=" text-forest-700">🏢 1. Thiết lập & tài khoản</td>
+                <td>Tạo phòng ban/bộ phận; thêm hoặc import học viên; đăng nhập bằng email công ty; quản lý nhóm đặc
+                  biệt</td>
+                <td class="text-center"><span class="pill pill-forest font-mono">US-01, 02, 03, 12</span></td>
+              </tr>
+              <tr>
+                <td class=" text-teal-600">📚 2. Xây dựng học liệu & đề</td>
+                <td>Thêm tài liệu (PDF hoặc video &le; 5 phút); nhập đề từ Excel; tạo bài kiểm tra</td>
+                <td class="text-center"><span class="pill pill-teal font-mono">US-04, 05, 06</span></td>
+              </tr>
+              <tr>
+                <td class=" text-forest-600">🎓 3. Học & kiểm tra</td>
+                <td>Xem học liệu được giao; học tài liệu/xem video; làm bài và xem kết quả</td>
+                <td class="text-center"><span class="pill pill-mint font-mono">US-07, 08, 09</span></td>
+              </tr>
+              <tr>
+                <td class=" text-amber-600">📊 4. Theo dõi & hỗ trợ</td>
+                <td>Nhận cảnh báo khi học viên trượt quá N lần; xem báo cáo tiến độ</td>
+                <td class="text-center"><span class="pill pill-amber font-mono">US-10, 11</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- BẢNG 6.2: DANH SÁCH CHI TIẾT 12 USER STORY (MVP) + LIVE SEARCH & FILTER -->
+      <div class="bento-card p-5 sm:p-7 bg-forest-50/40 mb-10">
+        <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 mb-4 px-2">
+          <div>
+            <h3 class="font-heading font-extrabold text-forest-700 text-base sm:text-lg">Bảng 6.2 &mdash; Chi tiết 12
+              User Story thuộc phạm vi MVP</h3>
+            <p class="text-xs text-forest-600/75">Cấu trúc chuẩn Agile: As a (Vai trò) &rarr; I want to (Hành động)
+              &rarr; So that (Giá trị mang lại)</p>
+          </div>
+
+          <!-- Search + Role Filter Bar -->
+          <div class="flex flex-wrap items-center gap-3">
+            <div class="relative">
+              <input type="text" id="storySearchInput" oninput="searchAndFilterStories()"
+                placeholder="🔍 Tìm mã US, từ khóa..."
+                class="pl-3.5 pr-4 py-1.5 rounded-full bg-white border border-forest-200 text-xs font-semibold text-forest-800 placeholder-forest-400 focus:outline-none focus:border-forest-500 shadow-sm w-48 sm:w-56">
+            </div>
+            <div class="flex items-center gap-1.5 bg-forest-100/80 p-1.5 rounded-full text-xs font-bold">
+              <button onclick="filterStories('all')" id="stBtn-all"
+                class="st-btn px-3.5 py-1.5 rounded-full bg-forest-700 text-white shadow-sm transition">Tất cả
+                (12)</button>
+              <button onclick="filterStories('admin')" id="stBtn-admin"
+                class="st-btn px-3.5 py-1.5 rounded-full text-forest-700 hover:bg-white/60 transition">Admin / Manager
+                (8)</button>
+              <button onclick="filterStories('learner')" id="stBtn-learner"
+                class="st-btn px-3.5 py-1.5 rounded-full text-forest-700 hover:bg-white/60 transition">Học viên
+                (4)</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="overflow-x-auto wow-table-wrap">
+          <table class="wow-table text-sm text-left">
+            <thead>
+              <tr>
+                <th class="w-24">Mã ID</th>
+                <th class="w-48">Nhóm Activity</th>
+                <th class="w-44">As a (Vai trò)</th>
+                <th>I want to (Tôi muốn thực hiện)</th>
+                <th>So that (Để đạt được mục tiêu)</th>
+              </tr>
+            </thead>
+            <tbody id="storyTableBody">
+              <tr class="story-item" data-role="admin">
+                <td><span
+                    class="font-mono font-black text-xs px-2.5 py-1 rounded-lg bg-forest-700 text-white whitespace-nowrap">US-01</span>
+                </td>
+                <td class="text-forest-600">Thiết lập & tài khoản</td>
+                <td><span class="pill pill-forest font-medium">🛡️ Admin</span></td>
+                <td class="text-forest-800">Tạo và quản lý phòng ban, bộ phận (2 cấp)</td>
+                <td class="text-forest-600">Giao học liệu và phân quyền đúng nhóm</td>
+              </tr>
+              <tr class="story-item" data-role="admin">
+                <td><span
+                    class="font-mono font-black text-xs px-2.5 py-1 rounded-lg bg-forest-700 text-white whitespace-nowrap">US-02</span>
+                </td>
+                <td class="text-forest-600">Thiết lập & tài khoản</td>
+                <td><span class="pill pill-forest font-medium">💼 Admin/Manager</span></td>
+                <td class="text-forest-800">Thêm học viên thủ công hoặc import Excel (Họ tên, Email, Phòng
+                  ban, Bộ phận)</td>
+                <td class="text-forest-600">Không phải quản lý danh sách thủ công; hệ thống tạo sẵn tài khoản</td>
+              </tr>
+              <tr class="story-item" data-role="learner">
+                <td><span
+                    class="font-mono font-black text-xs px-2.5 py-1 rounded-lg bg-teal-600 text-white whitespace-nowrap">US-03</span>
+                </td>
+                <td class="text-forest-600">Thiết lập & tài khoản</td>
+                <td><span class="pill pill-mint font-medium">🎓 Học viên</span></td>
+                <td class="text-forest-800">Đăng nhập bằng email công ty</td>
+                <td class="text-forest-600">Bắt đầu học ngay, không phải tạo và nhớ thêm mật khẩu</td>
+              </tr>
+              <tr class="story-item" data-role="admin">
+                <td><span
+                    class="font-mono font-black text-xs px-2.5 py-1 rounded-lg bg-forest-600 text-white whitespace-nowrap">US-04</span>
+                </td>
+                <td class="text-forest-600">Xây dựng học liệu & đề</td>
+                <td><span class="pill pill-teal font-medium">💼 Admin/Manager</span></td>
+                <td class="text-forest-800">Thêm tài liệu pdf hoặc video &le; 5 phút, chọn phòng ban/bộ
+                  phận và thời gian bắt đầu/hạn</td>
+                <td class="text-forest-600">Học viên có một nơi lấy tài liệu đúng, ngắn gọn</td>
+              </tr>
+              <tr class="story-item" data-role="admin">
+                <td><span
+                    class="font-mono font-black text-xs px-2.5 py-1 rounded-lg bg-forest-600 text-white whitespace-nowrap">US-05</span>
+                </td>
+                <td class="text-forest-600">Xây dựng học liệu & đề</td>
+                <td><span class="pill pill-teal font-medium">💼 Admin/Manager</span></td>
+                <td class="text-forest-800">Nhập đề trắc nghiệm từ Excel và tải file lỗi để sửa rồi nhập
+                  lại</td>
+                <td class="text-forest-600">Không phải soạn và chấm tay từng câu</td>
+              </tr>
+              <tr class="story-item" data-role="admin">
+                <td><span
+                    class="font-mono font-black text-xs px-2.5 py-1 rounded-lg bg-forest-600 text-white whitespace-nowrap">US-06</span>
+                </td>
+                <td class="text-forest-600">Xây dựng học liệu & đề</td>
+                <td><span class="pill pill-teal font-medium">💼 Admin/Manager</span></td>
+                <td class="text-forest-800">Tạo bài kiểm tra (thời gian, điểm đạt, số lần làm, xáo trộn,
+                  cho phép bỏ qua, ngưỡng cảnh báo, phạm vi, thời gian chạy)</td>
+                <td class="text-forest-600">Kiểm tra đúng đối tượng, đúng thời điểm</td>
+              </tr>
+              <tr class="story-item" data-role="learner">
+                <td><span
+                    class="font-mono font-black text-xs px-2.5 py-1 rounded-lg bg-teal-600 text-white whitespace-nowrap">US-07</span>
+                </td>
+                <td class="text-forest-600">Học & kiểm tra</td>
+                <td><span class="pill pill-mint font-medium">🎓 Học viên</span></td>
+                <td class="text-forest-800">Xem học liệu được giao, hạn học và thông báo (giao mới, sắp
+                  đến hạn 3 ngày, có phiên bản mới)</td>
+                <td class="text-forest-600">Không bỏ sót việc cần học</td>
+              </tr>
+              <tr class="story-item" data-role="learner">
+                <td><span
+                    class="font-mono font-black text-xs px-2.5 py-1 rounded-lg bg-teal-600 text-white whitespace-nowrap">US-08</span>
+                </td>
+                <td class="text-forest-600">Học & kiểm tra</td>
+                <td><span class="pill pill-mint font-medium">🎓 Học viên</span></td>
+                <td class="text-forest-800">Học tài liệu/xem video, lưu % tiến độ và vị trí, tự hoàn thành
+                  khi đạt &ge; 90%</td>
+                <td class="text-forest-600">Tiếp tục học đúng chỗ dừng và biết mình đã hoàn thành chưa</td>
+              </tr>
+              <tr class="story-item" data-role="learner">
+                <td><span
+                    class="font-mono font-black text-xs px-2.5 py-1 rounded-lg bg-teal-600 text-white whitespace-nowrap">US-09</span>
+                </td>
+                <td class="text-forest-600">Học & kiểm tra</td>
+                <td><span class="pill pill-mint font-medium">🎓 Học viên</span></td>
+                <td class="text-forest-800">Làm bài kiểm tra, xem điểm (thang 10), đạt/trượt, đáp án kèm
+                  giải thích và làm lại khi còn lượt</td>
+                <td class="text-forest-600">Nhận phản hồi ngay mà không chờ người chấm</td>
+              </tr>
+              <tr class="story-item" data-role="admin">
+                <td><span
+                    class="font-mono font-black text-xs px-2.5 py-1 rounded-lg bg-forest-700 text-white whitespace-nowrap">US-10</span>
+                </td>
+                <td class=" text-amber-600">Theo dõi & hỗ trợ</td>
+                <td><span class="pill pill-amber font-medium">🔔 Admin/Manager</span></td>
+                <td class="text-forest-800">Nhận cảnh báo khi học viên trượt quá N lần</td>
+                <td class="text-forest-600">Hỗ trợ kịp thời người đang gặp khó</td>
+              </tr>
+              <tr class="story-item" data-role="admin">
+                <td><span
+                    class="font-mono font-black text-xs px-2.5 py-1 rounded-lg bg-forest-700 text-white whitespace-nowrap">US-11</span>
+                </td>
+                <td class="text-amber-600">Theo dõi & hỗ trợ</td>
+                <td><span class="pill pill-amber font-medium">📊 Admin/Manager</span></td>
+                <td class="text-forest-800">Xem báo cáo tiến độ theo phòng ban/bộ phận, danh sách người
+                  cần hỗ trợ và xuất báo cáo</td>
+                <td class="text-forest-600">Thay thế việc theo dõi thủ công và chứng minh hiệu quả đào tạo</td>
+              </tr>
+              <tr class="story-item" data-role="admin">
+                <td><span
+                    class="font-mono font-black text-xs px-2.5 py-1 rounded-lg bg-forest-700 text-white whitespace-nowrap">US-12</span>
+                </td>
+                <td class="text-forest-600">Thiết lập & tài khoản</td>
+                <td><span class="pill pill-forest font-medium">💼 Admin/Manager</span></td>
+                <td class="text-forest-800">Quản lý nhóm đặc biệt (cho phạm vi giao học liệu)</td>
+                <td class="text-forest-600">Giao đúng người khi vai trò chéo phòng ban/dự án</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- BẢNG 6.3: HẠNG MỤC SAU MVP (SCOPE CUT) -->
+      <div class="bento-card p-5 sm:p-7 bg-forest-50/40">
+        <div class="flex items-center justify-between mb-3 px-2">
+          <div>
+            <h3 class="font-heading font-extrabold text-forest-700 text-base sm:text-lg">Bảng 6.3 &mdash; Các hạng mục
+              chuyển sang giai đoạn Sau MVP (Scope Cut)</h3>
+            <p class="text-xs text-forest-600/75">Cắt giảm phạm vi có chủ đích để giữ luồng MVP gọn nhẹ</p>
+          </div>
+          <span class="pill pill-amber">⏳ Giai đoạn 2</span>
+        </div>
+        <div class="overflow-x-auto wow-table-wrap">
+          <table class="wow-table text-sm text-left">
+            <thead>
+              <tr>
+                <th class="w-1/3">Hạng mục tính năng</th>
+                <th class="w-48 text-center">Điểm đau liên quan</th>
+                <th>Lý do đánh đổi & chuyển sang giai đoạn sau</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="row-later">
+                <td class=text-forest-800">💬 Kho hỏi đáp, lưu câu trả lời</td>
+                <td class="text-center"><span class="pill pill-amber">P3, P5</span></td>
+                <td class="text-forest-600">Giữ MVP tinh gọn xoay quanh luồng giao bài &rarr; học &rarr; kiểm tra trắc
+                  nghiệm &rarr; cảnh báo.</td>
+              </tr>
+              <tr class="row-later">
+                <td class=text-forest-800">🤖 AI hỏi đáp 24/7</td>
+                <td class="text-center"><span class="pill pill-amber">P3, P5</span></td>
+                <td class="text-forest-600">Cần dữ liệu học liệu chuẩn hóa trước khi huấn luyện trợ lý AI trả lời tự
+                  động.</td>
+              </tr>
+              <tr class="row-later">
+                <td class=text-forest-800">📝 Giao bài thực hành, nộp bài, phản hồi và review thực hành</td>
+                <td class="text-center"><span class="pill pill-amber">P4, P6, P8</span></td>
+                <td class="text-forest-600">MVP dùng hoàn thành tài liệu (&ge;90%) và đạt bài trắc nghiệm làm bằng chứng
+                  sẵn sàng làm việc.</td>
+              </tr>
+              <tr class="row-later">
+                <td class=text-forest-800">📩 Nhắc hạn qua Zalo/Email</td>
+                <td class="text-center"><span class="pill pill-amber">P7</span></td>
+                <td class="text-forest-600">Ở giai đoạn MVP chỉ sử dụng hệ thống thông báo nội bộ (In-app
+                  Notifications).</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ================= 07. BPMN TO-BE (4 INTERACTIVE TABS, ZERO TEXT CLUTTER) ================= -->
+  <section id="to-be" class="py-20 page-container">
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+      <div>
+        <span class="pill pill-forest mb-2.5">07 &bull; BPMN To-Be</span>
+        <h2 class="text-2xl sm:text-3xl font-heading font-black text-forest-700">4 Luồng nghiệp vụ To-Be trên hệ thống
+        </h2>
+      </div>
+
+      <!-- 4 Interactive Tabs -->
+      <div class="flex flex-wrap gap-2 bg-forest-100/75 p-1.5 rounded-2xl">
+        <button onclick="switchTab(1)" id="tabBtn1"
+          class="px-4 py-2 rounded-xl text-xs transition bg-forest-700 text-white shadow-sm">
+          1. Thêm Học Viên (Import File)
+        </button>
+        <button onclick="switchTab(2)" id="tabBtn2"
+          class="px-4 py-2 rounded-xl text-xs transition text-forest-700 hover:bg-white">
+          2. Thêm Tài Liệu Mới
+        </button>
+        <button onclick="switchTab(3)" id="tabBtn3"
+          class="px-4 py-2 rounded-xl text-xs transition text-forest-700 hover:bg-white">
+          3. Học Viên Học Tài Liệu
+        </button>
+        <button onclick="switchTab(4)" id="tabBtn4"
+          class="px-4 py-2 rounded-xl text-xs transition text-forest-700 hover:bg-white">
+          4. Làm Bài Kiểm Tra
+        </button>
+      </div>
+    </div>
+
+    <!-- Clean Diagram Showcase (Click to Zoom) -->
+    <div class="bento-card p-5 sm:p-7 bg-white">
+      <div id="flowView1" class="block">
+        <div class="relative bg-forest-50/50 rounded-2xl border border-forest-100 overflow-hidden cursor-pointer group"
+          onclick="openModalWithImg('/img/1.png', 'Luồng 1: Thêm học viên (Import file Excel)')">
+          <img src="/img/1.png" alt="BPMN Luồng 1"
+            class="w-full h-auto max-h-[600px] object-contain mx-auto group-hover:scale-[1.01] transition">
+          <span
+            class="absolute bottom-4 right-4 bg-forest-800/90 text-white text-xs font-bold px-4 py-2 rounded-full shadow-sm">🔍
+            Phóng to sơ đồ 1</span>
+        </div>
+      </div>
+
+      <div id="flowView2" class="hidden">
+        <div class="relative bg-forest-50/50 rounded-2xl border border-forest-100 overflow-hidden cursor-pointer group"
+          onclick="openModalWithImg('/img/2.png', 'Luồng 2: Thêm tài liệu mới')">
+          <img src="/img/2.png" alt="BPMN Luồng 2"
+            class="w-full h-auto max-h-[600px] object-contain mx-auto group-hover:scale-[1.01] transition">
+          <span
+            class="absolute bottom-4 right-4 bg-forest-800/90 text-white text-xs font-bold px-4 py-2 rounded-full shadow-sm">🔍
+            Phóng to sơ đồ 2</span>
+        </div>
+      </div>
+
+      <div id="flowView3" class="hidden">
+        <div class="relative bg-forest-50/50 rounded-2xl border border-forest-100 overflow-hidden cursor-pointer group"
+          onclick="openModalWithImg('/img/3.png', 'Luồng 3: Học viên học tài liệu')">
+          <img src="/img/3.png" alt="BPMN Luồng 3"
+            class="w-full h-auto max-h-[600px] object-contain mx-auto group-hover:scale-[1.01] transition">
+          <span
+            class="absolute bottom-4 right-4 bg-forest-800/90 text-white text-xs font-bold px-4 py-2 rounded-full shadow-sm">🔍
+            Phóng to sơ đồ 3</span>
+        </div>
+      </div>
+
+      <div id="flowView4" class="hidden">
+        <div class="relative bg-forest-50/50 rounded-2xl border border-forest-100 overflow-hidden cursor-pointer group"
+          onclick="openModalWithImg('/img/4.png', 'Luồng 4: Làm bài kiểm tra (Học viên)')">
+          <img src="/img/4.png" alt="BPMN Luồng 4"
+            class="w-full h-auto max-h-[600px] object-contain mx-auto group-hover:scale-[1.01] transition">
+          <span
+            class="absolute bottom-4 right-4 bg-forest-800/90 text-white text-xs font-bold px-4 py-2 rounded-full shadow-sm">🔍
+            Phóng to sơ đồ 4</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ================= 08. UI MOCKUP (LIVE FIGMA EMBED) ================= -->
+  <section id="mockup" class="py-20 bg-white/60 border-y border-forest-500/10">
+    <div class="page-container">
+
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
+        <div>
+          <span class="pill pill-teal mb-2.5">08 &bull; UI Mockup</span>
+          <h2 class="text-2xl sm:text-3xl font-heading font-black text-forest-700">Thiết kế giao diện người dùng (Figma)
+          </h2>
+        </div>
+
+        <a href="https://www.figma.com/design/dWvtLHAs1aOzmXJ9f5Znqu/Untitled?node-id=0-1&t=3WV2pQlGmADCXEvD-1"
+          target="_blank" rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-forest-700 hover:bg-forest-600 text-white text-xs font-bold shadow-sm transition self-start sm:self-auto">
+          <span>Mở trực tiếp trên Figma</span>
+          <span>↗</span>
+        </a>
+      </div>
+
+      <div class="bento-card overflow-hidden bg-white">
+        <div class="px-5 py-3 bg-forest-50 border-b border-forest-100 flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <span class="w-3 h-3 rounded-full bg-forest-500"></span>
+            <span class="w-3 h-3 rounded-full bg-teal-500"></span>
+            <span class="w-3 h-3 rounded-full bg-mint-200"></span>
+            <span class="text-xs font-mono text-forest-600 ml-2">Figma Interactive Canvas &mdash; Ready-to-Work
+              LMS</span>
+          </div>
+          <span class="text-xs text-forest-500 font-semibold">Giữ Ctrl + Cuộn chuột để Zoom</span>
+        </div>
+
+        <div class="w-full h-[620px] bg-forest-50/30">
+          <iframe class="w-full h-full border-0"
+            src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fdesign%2FdWvtLHAs1aOzmXJ9f5Znqu%2FUntitled%3Fnode-id%3D0-1%26t%3D3WV2pQlGmADCXEvD-1"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ================= 09. ERD (DATABASE SCHEMA SHOWCASE) ================= -->
+  <section id="erd" class="py-20 page-container">
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
+      <div>
+        <span class="pill pill-forest mb-2.5">09 &bull; Entity Relationship Diagram</span>
+        <h2 class="text-2xl sm:text-3xl font-heading font-black text-forest-700">Sơ đồ Thực thể Liên kết (ERD)</h2>
+      </div>
+
+      <div class="flex items-center gap-2.5">
+        <a href="https://dbdiagram.io/d/ReadyToWord-6ae0ccc3ed134e407e20d360" target="_blank" rel="noopener noreferrer"
+          class="px-4 py-2.5 rounded-full bg-forest-100 hover:bg-forest-200 text-forest-700 text-xs font-bold transition">
+          Mở dbdiagram.io ↗
+        </a>
+      </div>
+    </div>
+
+    <!-- Khung 1: Sơ đồ ERD -->
+    <div class="bento-card p-5 sm:p-7">
+      <div class="relative rounded-2xl overflow-hidden">
+        <iframe class="w-full h-[640px] rounded-2xl border-0"
+          src="https://dbdiagram.io/e/6ae0ccc3ed134e407e20d360/6ae403e3aac330141060e4c3"></iframe>
+      </div>
+    </div>
+
+    <!-- Khung 2: Bảng mô tả quan hệ -->
+    <div class="bento-card p-5 sm:p-7 mt-6">
+      <h3 class="text-lg font-heading font-black text-forest-700 mb-4">Mô tả quan hệ giữa các bảng</h3>
+
+      <div class="overflow-x-auto">
+        <table class="w-full text-xs text-left text-gray-700 border-collapse">
+          <thead>
+            <tr class="border-b border-gray-300 text-gray-800">
+              <th class="py-2 pr-4 font-bold whitespace-nowrap">Loại quan hệ</th>
+              <th class="py-2 pr-4 font-bold whitespace-nowrap">Bảng</th>
+              <th class="py-2 font-bold">Ý nghĩa</th>
+            </tr>
+          </thead>
+          <tbody class="[&>tr]:border-b [&>tr]:border-gray-100">
+
+            <tr>
+              <td class="py-2 pr-4 font-semibold whitespace-nowrap">1 : 1</td>
+              <td class="py-2 pr-4 whitespace-nowrap">Người dùng &harr; Tài khoản</td>
+              <td class="py-2">Mỗi người chỉ có một tài khoản đăng nhập</td>
+            </tr>
+
+            <tr>
+              <td class="py-2 pr-4 font-semibold whitespace-nowrap" rowspan="10">1 : n</td>
+              <td class="py-2 pr-4 whitespace-nowrap">Phòng ban &rarr; Người dùng</td>
+              <td class="py-2">Một phòng ban có nhiều người, mỗi người chỉ thuộc một phòng ban</td>
+            </tr>
+            <tr>
+              <td class="py-2 pr-4 whitespace-nowrap">Phòng ban &rarr; Phòng ban con</td>
+              <td class="py-2">Phòng ban nhiều cấp (cha &ndash; con)</td>
+            </tr>
+            <tr>
+              <td class="py-2 pr-4 whitespace-nowrap">Tài liệu &rarr; Phiên bản tài liệu</td>
+              <td class="py-2">Mỗi lần sửa nội dung tạo một phiên bản mới</td>
+            </tr>
+            <tr>
+              <td class="py-2 pr-4 whitespace-nowrap">Bài kiểm tra &rarr; Phiên bản đề thi</td>
+              <td class="py-2">Mỗi lần sửa đề tạo một phiên bản mới</td>
+            </tr>
+            <tr>
+              <td class="py-2 pr-4 whitespace-nowrap">Phiên bản đề thi &rarr; Câu hỏi</td>
+              <td class="py-2">Mỗi phiên bản có bộ câu hỏi riêng</td>
+            </tr>
+            <tr>
+              <td class="py-2 pr-4 whitespace-nowrap">Câu hỏi &rarr; Đáp án lựa chọn</td>
+              <td class="py-2">Một câu hỏi có nhiều đáp án (A, B, C, D...)</td>
+            </tr>
+            <tr>
+              <td class="py-2 pr-4 whitespace-nowrap">Phiên bản đề thi &rarr; Lượt làm bài</td>
+              <td class="py-2">Lượt làm bài gắn với đúng phiên bản đã làm</td>
+            </tr>
+            <tr>
+              <td class="py-2 pr-4 whitespace-nowrap">Người dùng &rarr; Lượt làm bài</td>
+              <td class="py-2">Một người có thể làm nhiều lượt</td>
+            </tr>
+            <tr>
+              <td class="py-2 pr-4 whitespace-nowrap">Lượt làm bài &rarr; Đáp án đã chọn</td>
+              <td class="py-2">Mỗi đáp án người dùng chọn là một dòng</td>
+            </tr>
+            <tr>
+              <td class="py-2 pr-4 whitespace-nowrap">Người dùng &rarr; Thông báo</td>
+              <td class="py-2">Nhật ký email/SMS gửi cho từng người</td>
+            </tr>
+
+            <tr>
+              <td class="py-2 pr-4 font-semibold whitespace-nowrap" rowspan="6">n : n</td>
+              <td class="py-2 pr-4 whitespace-nowrap">Tài liệu &harr; Nhãn</td>
+              <td class="py-2">Qua bảng Gắn nhãn, phân loại tài liệu</td>
+            </tr>
+            <tr>
+              <td class="py-2 pr-4 whitespace-nowrap">Tài liệu &harr; Người dùng</td>
+              <td class="py-2">Giao tài liệu cho từng người</td>
+            </tr>
+            <tr>
+              <td class="py-2 pr-4 whitespace-nowrap">Tài liệu &harr; Phòng ban</td>
+              <td class="py-2">Giao tài liệu cho cả phòng ban (và các phòng ban con)</td>
+            </tr>
+            <tr>
+              <td class="py-2 pr-4 whitespace-nowrap">Bài kiểm tra &harr; Người dùng</td>
+              <td class="py-2">Giao bài kiểm tra cho từng người</td>
+            </tr>
+            <tr>
+              <td class="py-2 pr-4 whitespace-nowrap">Bài kiểm tra &harr; Phòng ban</td>
+              <td class="py-2">Giao bài kiểm tra cho cả phòng ban</td>
+            </tr>
+            <tr>
+              <td class="py-2 pr-4 whitespace-nowrap">Người dùng &harr; Tài liệu</td>
+              <td class="py-2">Bảng Tiến độ học: mỗi người học mỗi tài liệu một tiến độ</td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+
+      <p class="mt-4 pt-3 border-t border-gray-200 text-xs text-gray-600">19 Bảng dữ liệu &bull; Quản lý phiên bản
+        (Versioning) cho cả Tài liệu &amp; Đề thi</p>
+    </div>
+  </section>
+
+
+  <!-- ================= MINIMAL FOOTER ================= -->
+  <footer class="py-10 bg-white/80 border-t border-forest-500/10 text-xs text-forest-500">
+    <div class="page-container flex flex-col sm:flex-row items-center justify-between gap-3">
+      <div class="flex items-center gap-2.5">
+        <span
+          class="w-6 h-6 rounded-lg bg-forest-700 text-white font-heading font-black flex items-center justify-center">R</span>
+        <span class="font-bold text-forest-700">Ready-to-Work</span>
+        <span>&bull; Hệ thống đào tạo nội bộ tinh gọn cho doanh nghiệp SME</span>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ================= LIGHTBOX MODAL ================= -->
+  <div id="imageModal" class="fixed inset-0 z-50 hidden modal-backdrop flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-6xl w-full max-h-[92vh] flex flex-col overflow-hidden shadow-2xl">
+      <div class="px-5 py-3.5 border-b border-forest-100 flex items-center justify-between bg-forest-50">
+        <h4 id="modalTitle" class="font-heading font-extrabold text-forest-800 text-sm">Chi tiết sơ đồ</h4>
+        <button onclick="closeModal()"
+          class="w-8 h-8 rounded-full bg-forest-100 hover:bg-forest-700 hover:text-white flex items-center justify-center text-forest-700 font-bold transition">
+          ✕
+        </button>
+      </div>
+      <div class="p-4 overflow-auto flex-grow flex items-center justify-center bg-[#0F231A]">
+        <img id="modalImg" src="" alt="Preview" class="max-w-full max-h-[80vh] object-contain rounded-lg">
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ================= INTERACTIVE SCRIPTS ================= -->
+  <script>
+    // 1. BPMN To-Be Tab Switcher
+    function switchTab(idx) {
+      for (let i = 1; i <= 4; i++) {
+        const view = document.getElementById('flowView' + i);
+        const btn = document.getElementById('tabBtn' + i);
+        if (view) view.classList.add('hidden');
+        if (btn) btn.className = "px-4 py-2 rounded-xl text-xs font-bold transition text-forest-700 hover:bg-white";
+      }
+      const activeView = document.getElementById('flowView' + idx);
+      const activeBtn = document.getElementById('tabBtn' + idx);
+      if (activeView) activeView.classList.remove('hidden');
+      if (activeBtn) activeBtn.className = "px-4 py-2 rounded-xl text-xs font-bold transition bg-forest-700 text-white shadow-sm";
+    }
+
+    // 2. Problem Matrix Filter
+    function filterProblem(stage) {
+      document.querySelectorAll('.prob-btn').forEach(b => {
+        b.className = "prob-btn px-4 py-1.5 rounded-full text-forest-700 hover:bg-white/60 transition";
+      });
+      const active = document.getElementById('probBtn-' + stage);
+      if (active) active.className = "prob-btn px-4 py-1.5 rounded-full bg-forest-700 text-white shadow-sm transition";
+
+      document.querySelectorAll('.prob-card').forEach(row => {
+        const s = row.getAttribute('data-stage');
+        row.style.display = (stage === 'all' || s === stage) ? 'table-row' : 'none';
+      });
+    }
+
+    // 3. Story Map Role Filter + Live Search (Table 6.2)
+    let currentStoryRole = 'all';
+    function filterStories(role) {
+      currentStoryRole = role;
+      document.querySelectorAll('.st-btn').forEach(b => {
+        b.className = "st-btn px-3.5 py-1.5 rounded-full text-forest-700 hover:bg-white/60 transition";
+      });
+      const active = document.getElementById('stBtn-' + role);
+      if (active) active.className = "st-btn px-3.5 py-1.5 rounded-full bg-forest-700 text-white shadow-sm transition";
+      searchAndFilterStories();
+    }
+
+    function searchAndFilterStories() {
+      const q = (document.getElementById('storySearchInput')?.value || '').toLowerCase().trim();
+      document.querySelectorAll('.story-item').forEach(row => {
+        const r = row.getAttribute('data-role');
+        const text = row.innerText.toLowerCase();
+        const roleMatch = (currentStoryRole === 'all' || r === currentStoryRole);
+        const searchMatch = (!q || text.includes(q));
+        row.style.display = (roleMatch && searchMatch) ? 'table-row' : 'none';
+      });
+    }
+
+    // 4. Lightbox Zoom Modal
+    function openModalWithImg(src, title) {
+      const modal = document.getElementById('imageModal');
+      document.getElementById('modalImg').src = src;
+      document.getElementById('modalTitle').innerText = title || 'Chi tiết sơ đồ';
+      modal.classList.remove('hidden');
+    }
+    function closeModal() {
+      document.getElementById('imageModal').classList.add('hidden');
+    }
+    window.addEventListener('click', e => {
+      const modal = document.getElementById('imageModal');
+      if (e.target === modal) closeModal();
+    });
+    window.addEventListener('keydown', e => {
+      if (e.key === 'Escape') closeModal();
+    });
+
+    // 5. Scroll-Spy Active Menu Highlighting
+    const sections = ['context', 'interview', 'persona', 'as-is', 'problem', 'story-map', 'to-be', 'mockup', 'erd'];
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    window.addEventListener('scroll', () => {
+      let current = 'context';
+      sections.forEach(id => {
+        const el = document.getElementById(id);
+        if (el && window.scrollY >= el.offsetTop - 130) {
+          current = id;
+        }
+      });
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + current) {
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
+
+</body>
+
+</html>
